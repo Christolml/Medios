@@ -87,7 +87,6 @@ switch (color) {
 //  condicion ? valorTrue : valorFalse     , este ocupa llevar el valorFalse de afuerzas
 
 //let nombre = prompt("Escribe tu nombre: ");
-
 //nombre.length > 5 ? console.log("Tu nombre es largo") : console.log("Tu nombre es corto");
 //forma simplificada del puro if
 //if(nombre.length > 5) console.log("Tu nombre es largo")
