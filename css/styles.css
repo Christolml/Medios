@@ -1,0 +1,79 @@
+/*  h1 {
+    background: black;
+    font-size: 50px;
+    font-family: sans-serif;
+    text-decoration: underline; le da un subrayado al texto
+    color: white;
+}   */
+
+/* el de arriba y abajo es un ejemplo de cascada, el cual el de abajo que es mismo h1 en los dos agarra los mismos valores
+con el cambio de que el de abajo le modifico el color a yellow */
+/* h1:nth-child(2) {
+    color: yellow;
+}   */
+
+
+
+/* SELECTORES
+selectores de etiqueta
+    usan la etiqueta html del elemento
+
+selectores descendientes
+    son selectores separados por un espacio.
+    El primero es el padre y el segundo es un hijo (o un descendidente de cualquier nivel)
+
+*/
+
+/* body h1 {
+    color: red;
+} */
+
+
+/* VARIABLES */
+/* h1{
+    --color: blue;
+    color: var(--color);
+}
+
+span{
+    color: var(--color);
+}
+
+body{
+    --color: red;
+    background: var(--color);
+}
+
+p{
+    color: var(--color);
+} */
+
+
+/* ESTILOS DE TEXTO */
+/* h1{
+    color: green;
+    font-size: 50px;
+    font-family: 'Gloria Hallelujah', cursive; este tipo de fuente esta relacionado con google fontts con el link de mi html
+    line-height: 50px;
+} */
+
+/* ESTILOS POR DEFECTO */
+
+/* body{
+
+}
+
+h1{
+
+}
+
+ul{
+    padding: 0;
+} */
+
+
+
+
+
+
+
