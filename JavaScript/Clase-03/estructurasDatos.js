@@ -77,13 +77,150 @@ let arr3 = arr.slice(3,7);
 console.log(arr3);
 
 
+//--------------ES6-------------
+//con find, nos devuelve el primer elemento que coincida con la condicion
+//con findIndex, devuelve el indice del elemento 
+let arr4 = [1,2,3,4,5];
+let num = arr4.find( elemento => elemento > 3);
+let numIndex = arr4.findIndex( elemento => elemento > 3);
+console.log(num);
+console.log(numIndex);
+
+// array-fuction
+//con paretesis si recibe mas de un parametro y separados por coma
+//si no recibe parametros es de la forma de abajo
+//(parametro1,parametro2) => //valor retornado
+//() => //valor retornado
+
+
+//------------------ITERADORES----------------
+//Objeto que contienen un metodo next(), devuelve un objeto con dos propiedades, recuerda su posicion anterior
+//value, done
+// tres metodos que nos permite recuperar un iterador
+// .keys() devuelve indice  .values()   .entries()    estos devuelven un iterador
+
+let iterador = arr4.keys();
+console.log(iterador.next());
+console.log('Esto lo esta interrumpiendo mi iterador, pero el sigue recordando en que numero va');
+console.log(iterador.next());
+console.log(iterador.next());
+console.log(iterador.next());
+console.log(iterador.next());   
+
+
+//--------------------OBJETOS-----------------------
+// lado izq propiedades, lado der valores
+let chris = {
+    nombre: 'Christopher',
+    edad: 21,
+    pais: 'Mexico',
+    esPadre: false,
+    hijos: ['Trosca','Luna','Rocky']
+}
+//a mi objeto se le puede seguir agregando propiedades
+chris.ciudad = 'Colima';
+
+console.log(chris);
+
+//--------------------OPERADORES DELETE, IN Y HASOWNPROPERTY------------------
+// delete => elimina una propiedad
+// in     => devuelve true si existe la propiedad en el objeto
+//
+
+const juego = {
+    nombre: 'Fallout',
+    sedes: ['Mexico','USA','Alaska'],
+    creador: 'Christopher',
+    fundacion: 2007,
+    multiplataforma: true,
+    eslogan: 'Nunca ganaras',
+    // el de abajo es un metodo que nomas le pertenece a este objeto
+    saludar() {
+        return 'Bienvenidos al jueguito chipocludo del mundo mundial';
+    }
+};
+
+// delete juego.eslogan;
+//para poder usar in, ocupo poner la propiedad como string
+
+Object.prototype.numeroMagico = 27;
+// console.log('numeroMagico' in juego);
+//la propiedad de abajo viene del prototype, no existe en el objeto juego
+// console.log(juego.numeroMagico);
+
+// permite saber si una propiedad existe en el objeto
+console.log(juego.hasOwnProperty('numeroMagico'));
+
+
+//---------------------COPIAR OBJETO-------------
+//ES6   lo de abajo permite copiar un objeto, en assign se especifica que es un 
+// objeto con {} y despues el objeto a copiar
+let juego2 = Object.assign({}, juego);
+console.log(juego2);
+
+// ASIGNAR VARIABLES EXISTENTES A PROPIEDADS
+// si el nombre de la propiedad es igual al de la variable que esta afuera se pone como el comentado
+let a = 'hola', b = 'mundo';
+let myObj = {
+    // a,
+    // b
+    a: a,
+    b: b
+}
+
+console.log(myObj);
+
+//-----------------EXPRESIONES EN PROPIEDADES
+//ando juntando mis dos variables a y b que estan arriba declaradas y en este las uno para crear una
+// propiedad y asignarles un valor
+let myObj2 = {
+    [a + b]: 'Hola mundo'
+}
+
+console.log(myObj2);
 
 
 
+let estudiantes = [
+    {
+        nombre: 'Chris',
+        calificacion: 20
+    },
+    {
+        nombre: 'Fajis',
+        calificacion: 10
+    },
+    {
+        nombre: 'Towi',
+        calificacion: 31
+    },
+    {
+        nombre: 'Maria',
+        calificacion: 9
+    },
+];
 
 
+// console.log(estudiantes[1]);
+//----------------MAP------------
+// Map transforma cada elemento del array segun el callback
+// y devuelve un array
+// el callback es una funcion
 
+                                    // PARAMETRO => VALOR DE RETORNO
+// con map lo que hace es aplicar la funcion a cada uno de lo elementos del array
+let estudiantsNombres = estudiantes.map( estudiante => estudiante.nombre);
 
+console.log(estudiantsNombres);
+
+//------------------FILTER-------------
+// filtra elementos y los devuelve en un array
+//nos saca los elementos que de calificacion tengan mayor a 10
+let estudiantesAprobados = estudiantes.filter(estudiante => estudiante.calificacion > 10);
+console.log(estudiantesAprobados);
+//nos saca el nombre de los elementos que tuvieron calificacion mayor a 10
+let estudiantesAprobadosNombres = estudiantesAprobados.map(estudiante => estudiante.nombre);
+console.log(estudiantesAprobadosNombres);
 
 
 
