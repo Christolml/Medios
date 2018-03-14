@@ -222,6 +222,66 @@ console.log(estudiantesAprobados);
 let estudiantesAprobadosNombres = estudiantesAprobados.map(estudiante => estudiante.nombre);
 console.log(estudiantesAprobadosNombres);
 
+//-----------------------------REDUCE--------------------------
+// devuelve un solo valor por medio de iteraciones, ejecuta una funcion una vez por cada elemento
+// presente en el array 
+// los parametros que recibe son el valor anterior, el valor actual, el indice actual 
+// y el array
+//    sintaxis:    reduce(cb(prev,current[,i,arr]) [, initial])   []son opcionales
+
+let numeros = [2,4,6,8,10];
+let suma = numeros.reduce( (a,b) => a + b);
+// nos devuelve la suma de nuestro array gracias a reduce y sus iteraciones
+console.log(suma);
+
+// obtener el valor mas alto del array por medio de un ternario
+let max = numeros.reduce( (a,b) => a > b ? a : b)
+console.log(max);
+
+// let promedio = numeros.reduce( (a,b) => (a+b))/numeros.length;
+// se necesito de los valores anteriores, el actual, el indice del array y el array MSSiteModeEvent
+// cuando la estructura es mas compleja y se tiene que crear pasos intermedios es cuando se pone llaves
+// el ternrio es lo siguiente:
+// retorname lo que devuelva el operador ternario, el operador ternario pregunta si se llega
+// al final de que el indice sea igual que la longitud del array menos uno nos va devolver la operacion
+// de b (que ya es la suma de todo el array) entre la longitud del array, pero si no es verdad que
+// i sea igual que la long del array menos uno (el final) nos devolvera b para que se siga acumulando la suma del array
+let promedio = numeros.reduce( (a,b,i,arr) => {
+    b += a;
+    return i == arr.length -1 ? b/arr.length : b;
+});
+console.log(promedio);
+
+// cuando es con objetos nos va devolver el ultimo objeto y lo que especifiqueos ya que en los objetos no nos dejo
+// manejar sus valores
+//$$$$$$$$$$$$$$$$$$$$$  juntos arriba y abajo   $$$$$$$$$$$$$$$$$
+// let mejorEstudiante = estudiantes.reduce( (a,b) => a.calificacion > b.calificacion ? a.calificacion : b.calificacion);
+// console.log(mejorEstudiante);
+
+
+//para arreglar lo de los objetos, lo que se hizo fue que ahora si a cada objeto y a cada iteracion se 
+// le fue preguntando uno por uno sobre las califaciones de cada objeto (a y b, recordar que a es el resultado 
+// de la iteracion anterior) y se regresaba un nuevo objeto con las caracteristicas descritas y ese objeto
+// que se retornaba es nuestra a
+
+let mejorEstudiante = estudiantes.reduce( (a,b) => {
+    if (a.calificacion > b.calificacion) {
+        return {
+            nombre: a.nombre,
+            calificacion: a.calificacion
+        }
+    } else {
+        return {
+            nombre: b.nombre,
+            calificacion: b.calificacion
+        }
+    }
+
+})
+
+console.log(mejorEstudiante);
+
+
 
 
 
