@@ -38,7 +38,7 @@ if("a"=="b") {
 //undefined, cuando no se le asigna un valor a la variable, 
 //null cuando no existe un  valor
 let noDefinida;
-let title = document.getElementById("title");
+//let title = document.getElementById("title");
 
 //operadores  +=, -=, *=, /=
 
@@ -56,12 +56,13 @@ console.log(condicion2);
 //propiedades y métodos
 let hola="Buenos dias mi maestra favorita";    //como arreglar que con indexOf me imprima de todas las "a"
 
-let name1="Christpher";
+let name1="Christopher";
 let name2="Alex";
 let name3="Esmeralda";
 let name4="carlos";
+// console.log(name1.indexOf("r"));
 //con esto me devuelve true o false ya que, estamos comparando con el indexOf con los nombres
-console.log(`la sentencia fue: ${name3.indexOf("C")==0}`);
+console.log(`la sentencia fue: ${name1.indexOf("C")==0}`);
 //si un nombre de arriba lo escriben con minuscula con toUpperCase lo convierto a mauscula
 //y ya ejecuto el indexOf sin problemas
 console.log(name4.toUpperCase().indexOf("C")==0);  
