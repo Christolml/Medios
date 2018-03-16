@@ -24,13 +24,14 @@ console.log(substring);
 substr=saludo.substr(4,7);
 substr=saludo.substr(-5,6);
 console.log(substr);
+
 //es igual qu substring solo que la diferencia viene cuando se usan numeros negativos en este nuevo
 //el primero es el indice de donde se empieza a tomar las letras y el seg num con negativo es la 
 // cantidad de letras que no se van a tomar del final
 //el primero negativo indica que se va a empezar a contar del final al comienzo
 slice=saludo.slice(4,7);
 slice=saludo.slice(4,-7);
-slice=saludo.slice(-4,-7);
+slice=saludo.slice(-4,-7); //esto genera un espacio en blanco
 console.log(slice);
 
 
