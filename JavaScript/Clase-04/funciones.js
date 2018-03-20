@@ -44,11 +44,47 @@ function restar(a){
 let miResta = restar(10)(3);
 console.log(miResta);
 
+//---------------------FUNCIONES AUTOINVOCADAS-------------------
+//se puede omitir el nombre, se agregan parentesis al inicio y final de la funcion y despues se ponen los valores
+// que queremos mandar como parametros a mi funcion
+let miMultiplicacion = (function multiplica(a,b) {
+    return a * b
+})(5,8);
+
+console.log(miMultiplicacion);
 
 
+//---------------------FUNCION CONSTRUCTORA-------------------
+// estas funciones son usadas para crear objetos a partir de estas funciones, la de abajo es una func constructora
+let Pais = function(nombre,moneda) {
+    this.nombre = nombre;
+    this.moneda = moneda;
+};
+
+let mex = new Pais('México', 'Peso');
+
+console.log(mex);
 
 
+//------------------ EJECUTAR FUNCIONES CON APPLY Y CALL--------------------
+// maneras de mandar a llamar una funcion indirectamente
 
+function add(a,b,c) {
+    return a + b + c
+}
+
+let numeros = [2,3,4];
+
+// let myAdd = add(numeros);  con esto no se puede ya que mi array numeros lo toma como el primer parametro y da error
+
+//los parametros de apply es un scope (undefined en este caso) y un array
+let myAdd = add.apply(undefined,numeros);
+
+// con call no admite un array sino que admite los parametros separados por coma
+let myOtherAdd = add.call(undefined,2,3,5);
+
+console.log(myAdd);
+console.log(myOtherAdd);
 
 
 
