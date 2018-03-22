@@ -67,11 +67,45 @@ console.log(res);
 
 
 //-------------------CLOSURES---------------
+/*
+Un closure es la combinación de una función y el ámbito léxico en el que se declaro dicha función.
+Es decir los closures son funciones que manejan variables independientes. En otras palabras, la función 
+definida en el closure "recuerda" el ambito en el que se ha creado.
+Un closure es un tipo especial de objeto que combina dos cosas: una función y el entorno en que se creó esa función.
 
+desde afuera se puede referenciar a una funcion retornada dentro de una funcion y acceder a sus variables
+la segunda funcion pudo acceder a la clave de afuera gracias al scope y que cuando se 
+llama la funcion saludar se puso doble parentesis para indicar que ejecute la segunda funcion
+*/
 function saludar() {
     let saludo = 'Holi';
+
+    return function saludarInterno(amigo) {
+        console.log(`${saludo} ${amigo}`);
+    }
 }
 
+// saludar()();
 
+let miSaludo = saludar();
+miSaludo("Christo");
+miSaludo("Luis");
 
+function afuera() {
+    let numero = 1;
+    return function() {
+        numero++;
+        console.log(numero);
+    }
+}
 
+afuera()();
+
+// aumentar tiene toda la funcion de afuera
+let aumentar = afuera();
+aumentar();
+aumentar();
+aumentar();
+aumentar();
+aumentar();
+aumentar();
