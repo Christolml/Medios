@@ -29,9 +29,9 @@ console.log(substr);
 //el primero es el indice de donde se empieza a tomar las letras y el seg num con negativo es la 
 // cantidad de letras que no se van a tomar del final
 //el primero negativo indica que se va a empezar a contar del final al comienzo
-slice=saludo.slice(4,7);
+slice=saludo.slice(4,7); //entre esos indices es un rango del cual se van a tomar las letras
 slice=saludo.slice(4,-7);
-slice=saludo.slice(-4,-7); //esto genera un espacio en blanco
+     slice=saludo.slice(-4,-7); //esto genera un espacio en blanco
 console.log(slice);
 
 
@@ -93,7 +93,7 @@ switch (color) {
 //if(nombre.length > 5) console.log("Tu nombre es largo")
 
 //------------EJERCICIO PRACTICO DE DO WHILE-------------, me sigue apareciendo la ventana
-//hasta que escriba bien la contrena
+//hasta que escriba bien la contrasena
 /*
 let password = 'ED';
 let pass;
@@ -105,9 +105,11 @@ do {
 
 
 //---------------FOR OF (ES6)------------
-//funciona con cualquier objeto, recorre el objeto y devuelve el valor para cada una de las interacciones
+//funciona con cualquier objeto, recorre el objeto y devuelve el valor para cada una de las iteracciones
 let amigos = ["Christopher", "Dana", "Luis", "Miguel", "Daniela"];
 let nombre = "Christopher";
+let numeros2 = new Set([1,1,2,2,3,3]);
+
 for (let amigo of amigos) {
     console.log(amigo);
 }
@@ -116,6 +118,9 @@ for (let value of nombre) {
     console.log(value);
 }
 
+for (let value of numeros2) {
+    console.log(value);
+}
 
 
 
