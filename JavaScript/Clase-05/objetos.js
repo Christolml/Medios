@@ -54,4 +54,5 @@ console.log(luis.invitarAlCurso());
 
 
 
-
+// ------------------------METODO STATIC
+// es un metodo que no requiere instancia
