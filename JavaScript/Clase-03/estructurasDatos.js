@@ -9,10 +9,11 @@ let arr2 = [1,2,3,'Holi',4];
 
 
 console.log(arr);
+console.log("--------------------------------Imprime el array arr")
 console.log(arr.length);
-console.log("--------------------------------");
+console.log("--------------------------------Tamaño de arr");
 console.log(arr[2]);
-console.log("--------------------------------");
+console.log("--------------------------------Imprime indice 2");
 
 let sum=0, sum2=0;
 //  array 1
@@ -33,6 +34,7 @@ for (let index = 0; index < arr2.length; index++) {
     sum2 += arr2[index];
 }
 
+console.log("--------------Imprime uno por uno los elementos del array");
 console.log(`La suma es del array es: ${sum}`);
 console.log("--------------------------------");
 console.log(`La suma del segundo array es: ${sum2}`);
@@ -43,13 +45,13 @@ console.log("--------------------------------");
 // y le estoy asignando otra nueva propiedad de saludo
 Array.prototype.saludo = 'Holi';
 console.log(arr.saludo);
-console.log("--------------------------------");
+console.log("---------Imprime el metodo saludo metido al prototype");
 
 //-------------------INDEX OF-------------
 console.log(arr.indexOf(8)); //este no existe y me regresa un numero negativo
-console.log("--------------------------------");
+console.log("------------indexOf(8) de arr");
 console.log(arr.indexOf(4));  //me regresa en que posicion esta el 4
-console.log("--------------------------------");
+console.log("------------indexOf(4) de arr");
 console.log(arr.indexOf('Trosca'));
 
 //-----------AGREGAR ELEMENTOS A MI ARRAY------------
@@ -59,7 +61,7 @@ console.log(arr.indexOf('Trosca'));
 arr.push('JavaScript','Desde','Cero');
 arr.unshift('Tengo',10,'Años');
 console.log(arr);
-console.log("--------------------------------");
+console.log("-------push y unshift agrega elementos");
 
 //--------------ELIMINAR UN SOLO ELEMENTO (SIN PARAMETROS)--------------
 //estos metodos devuelven el elemento eliminado
@@ -75,21 +77,27 @@ console.log("--------------------------------");
 //---------------JOIN (NOS DEVUELVE NUESTRO ARRAY EN STRING)---------
 //los elementos de nuestro nuevo string estan separados por una coma por defecto, pero se puede modificar
 console.log(arr.join(' '));
-console.log("--------------------------------");
+console.log("-------join devuelve el array en string");
 
 //-----------------SPLICE(AÑADE O QUITA ELEMENTOS)------------------
-//añade o quita elementos
-//modifica el string original
+// quita y añade elementos
+// modifica el string original
+// el primer parametro es a apartir de donde se va a iniciar a insertar los nuevos 
+// items, el segundo parametro es la cantidad de lo que se va a eliminar a partir 
+// del inicio, del tercer a adelante son los elementos que se van a insertar en el 
+// array original
 arr.splice(3,2,'nuevo','en esta','cadena');
 console.log(arr);
-console.log("--------------------------------");
+console.log("---------Splice quita y añade elementos ");
+// 10 Años 1 2 3 false Christopher true Trosca 4 5 JavaScript Desde
 
 //--------------SLICE ---------------
-//se crea un nuevo string a partir de un array, toma los elementos y ya es un nuevo string
-
+//se crea un nuevo array a partir de un array, toma los elementos y ya es un nuevo array
+// el primer parametro es donde inicia a tomar los valores y el segundo parametro
+// es hasta donde los va a tomar este segundo parametro no lo toma si no hasta uno antes
 let arr3 = arr.slice(3,7);
 console.log(arr3);
-console.log("--------------------------------");
+console.log("---slice se crea un nuevo array a partir de otro y desde un rango");
 
 
 //--------------ES6-------------
@@ -99,14 +107,14 @@ let arr4 = [1,2,3,4,5];
 let num = arr4.find( elemento => elemento > 3);
 let numIndex = arr4.findIndex( elemento => elemento > 3);
 console.log(num);
-console.log("--------------------------------");
+console.log("-----find(devuelve el primer elemento coincida con la condicion)");
 console.log(numIndex);
-console.log("--------------------------------");
+console.log("---findIndex(devuelve el primer indice que cumpla con la condicion");
 
-// array-fuction
-//con paretesis si recibe mas de un parametro y separados por coma
-//si no recibe parametros es de la forma de abajo
+// array-fuction    que es
+//con parentesis si recibe mas de un parametro y separados por coma
 //(parametro1,parametro2) => //valor retornado
+//si no recibe parametros es de la forma de abajo
 //() => //valor retornado
 
 
@@ -124,7 +132,7 @@ console.log(iterador.next());
 console.log(iterador.next());
 console.log(iterador.next());   
 
-console.log("--------------------------------");
+console.log("-------Iteradores");
 
 
 //--------------------OBJETOS-----------------------
@@ -140,7 +148,7 @@ let chris = {
 chris.ciudad = 'Colima';
 
 console.log(chris);
-console.log("--------------------------------");
+console.log("-----------------Objetos");
 
 //--------------------OPERADORES DELETE, IN Y HASOWNPROPERTY------------------
 // delete => elimina una propiedad
@@ -177,7 +185,7 @@ console.log(juego.hasOwnProperty('numeroMagico'));
 // objeto con {} y despues el objeto a copiar
 let juego2 = Object.assign({}, juego);
 console.log(juego2);
-console.log("--------------------------------");
+console.log("--------------Copiando un objeto");
 
 // ASIGNAR VARIABLES EXISTENTES A PROPIEDADS
 // si el nombre de la propiedad es igual al de la variable que esta afuera se pone como el comentado
@@ -190,7 +198,7 @@ let myObj = {
 }
 
 console.log(myObj);
-console.log("--------------------------------");
+console.log("-----------asignar variables existentes a propiedades");
 
 //-----------------EXPRESIONES EN PROPIEDADES
 //ando juntando mis dos variables a y b que estan arriba declaradas y en este las uno para crear una
@@ -200,7 +208,7 @@ let myObj2 = {
 }
 
 console.log(myObj2);
-console.log("--------------------------------");
+console.log("---------Expresiones en propiedades");
 
 
 
@@ -235,18 +243,18 @@ let estudiantes = [
 let estudiantsNombres = estudiantes.map( estudiante => estudiante.nombre);
 
 console.log(estudiantsNombres);
-console.log("--------------------------------");
+console.log("--------aplicando map");
 
 //------------------FILTER-------------
 // filtra elementos y los devuelve en un array
 //nos saca los elementos que de calificacion tengan mayor a 10
 let estudiantesAprobados = estudiantes.filter(estudiante => estudiante.calificacion > 10);
 console.log(estudiantesAprobados);
-console.log("--------------------------------");
+console.log("---------filter, estudiantes con cal > 10 ");
 //nos saca el nombre de los elementos que tuvieron calificacion mayor a 10
 let estudiantesAprobadosNombres = estudiantesAprobados.map(estudiante => estudiante.nombre);
 console.log(estudiantesAprobadosNombres);
-console.log("--------------------------------");
+console.log("---------usando el resultado anterior y usando map para que muestre los nombres solos");
 
 //-----------------------------REDUCE--------------------------
 // devuelve un solo valor por medio de iteraciones, ejecuta una funcion una vez por cada elemento
@@ -259,17 +267,17 @@ let numeros = [2,4,6,8,10];
 let suma = numeros.reduce( (a,b) => a + b);
 // nos devuelve la suma de nuestro array gracias a reduce y sus iteraciones
 console.log(suma);
-console.log("--------------------------------");
+console.log("------suma de un array de numeros con reduce");
 
 // obtener el valor mas alto del array por medio de un ternario
-let max = numeros.reduce( (a,b) => a > b ? a : b)
+let max = numeros.reduce( (a,b) => a > b ? a : b);
 console.log(max);
-console.log("--------------------------------");
+console.log("------valor mas alto del array numeros");
 
 // let promedio = numeros.reduce( (a,b) => (a+b))/numeros.length;
 // se necesito de los valores anteriores, el actual, el indice del array y el array MSSiteModeEvent
 // cuando la estructura es mas compleja y se tiene que crear pasos intermedios es cuando se pone llaves
-// el ternrio es lo siguiente:
+// el ternario es lo siguiente:
 // retorname lo que devuelva el operador ternario, el operador ternario pregunta si se llega
 // al final de que el indice sea igual que la longitud del array menos uno nos va devolver la operacion
 // de b (que ya es la suma de todo el array) entre la longitud del array, pero si no es verdad que
@@ -279,13 +287,13 @@ let promedio = numeros.reduce( (a,b,i,arr) => {
     return i == arr.length -1 ? b/arr.length : b;
 });
 console.log(promedio);
-console.log("--------------------------------");
+console.log("-----Devuelve promedio con un reduce un poco mas complicado");
 
-// cuando es con objetos nos va devolver el ultimo objeto y lo que especifiqueos ya que en los objetos no nos dejo
+// cuando es con objetos nos va devolver el ultimo objeto y lo que especifiquemos ya que en los objetos no nos dejo
 // manejar sus valores
 //$$$$$$$$$$$$$$$$$$$$$  juntos arriba y abajo   $$$$$$$$$$$$$$$$$
-// let mejorEstudiante = estudiantes.reduce( (a,b) => a.calificacion > b.calificacion ? a.calificacion : b.calificacion);
-// console.log(mejorEstudiante);
+//  let mejorEstudiante2 = estudiantes.reduce( (a,b) => a.calificacion > b.calificacion ? a.calificacion : b.calificacion);
+//  console.log(mejorEstudiante2);
 
 
 //para arreglar lo de los objetos, lo que se hizo fue que ahora si a cada objeto y a cada iteracion se 
