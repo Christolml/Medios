@@ -24,6 +24,10 @@ class Persona {
         return `Holi, soy ${this.nombreCompleto} y vivo en ${this.pais}`;
     }
 
+    static describirPersona(Persona) {
+        return `Esta persona se llama ${Persona.nombreCompleto} y es de ${Persona.pais}`;
+    }
+
 }
 
 
@@ -53,6 +57,13 @@ const luis = new Profesor('Luis','Velazquez','Mexico','GO');
 console.log(luis.invitarAlCurso());
 
 
-
 // ------------------------METODO STATIC
 // es un metodo que no requiere instancia
+
+console.log(Persona.describirPersona(christo));
+
+
+
+
+
+
