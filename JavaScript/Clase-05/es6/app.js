@@ -47,10 +47,14 @@ class TaskList {
         // html lo metemos a la pag web
         // cada tarea es un li
         let tasks = this.tasks.map( task => `
-        <li class="task">
-        <input type="checkbox" class="task__complete-button">
-        <span class="task__name">${task.name}</span>
-        <a href="#" class="task__remove-button">X</a>
+        <li class="task ${task.isComplete ? 'complete' : ''}">
+            <input type="checkbox" 
+            class="task__complete-button"
+            ${task.isComplete ? 'checked' : ''}
+            >
+
+            <span class="task__name">${task.name}</span>
+            <a href="#" class="task__remove-button">X</a>
         </li>
         `);
 
@@ -139,7 +143,9 @@ function completeDOMtask(e, list = inbox) {
     if (e.target.tagName === 'INPUT') {
         // completar la tarea de la lista, se necesita el indice
         list.tasks[getTaskIndex(e)].complete();
-        console.table(list.tasks);
+        // linea 83 es para css, classList es una lista que contiene todas las clases del elemento, toggle es un metodo que cambia, añade o quita clase cada vez
+        e.target.parentElement.classList.toggle('complete');
+        // console.table(list.tasks);
     }
 }
 
