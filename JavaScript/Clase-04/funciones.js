@@ -24,12 +24,12 @@ console.log(resultado);
 // sumar es un metodo del objeto 
 let obj = {
     nombre: 'objeto',
-    sumar(a,b) {
+    sumar2(a,b) {
         return a + b;
     }
 };
 
-let miOtraSuma = obj.sumar(7,8);
+let miOtraSuma = obj.sumar2(7,8);
 console.log(`El resultado es: ${miOtraSuma}`);
 
 //-----------------FUNCIONES DENTRO DE OTRAS FUNCIONES-----------
