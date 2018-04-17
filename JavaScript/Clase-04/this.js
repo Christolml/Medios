@@ -15,17 +15,18 @@ function checkThis() {
     console.log(this);
 }
 
-// checkThis();
+checkThis();
 
 //-------------- LEXICAL THIS--------------
 // con las arrow function existe el lexical this el cual nos permite ir directamente con el this exterior 
 // antes para hacer eso se tenia que usar una variable intermedia
 function Boy(edad) {
     this.edad = 0;
-    setInterval(() => {this.edad++},1000)
+    setInterval(() => {this.edad++},100)
 
 }
 
 
 let pedrito = new Boy();
+console.log(pedrito);
 
